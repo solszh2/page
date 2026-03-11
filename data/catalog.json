@@ -9,9 +9,10 @@
         "id": "ne-1",
         "name": "新能源汽车结构与原理",
         "author": "张三 编著",
+        "price": "59.00",
         "tagline": "全面解析新能源汽车核心三电系统与最新架构。",
-        "coverImage": "/images/ne-1.jpg",
-        "purchaseLink": "https://jd.com"
+        "coverImage": "https://via.placeholder.com/150x200",
+        "purchaseLink": "https://gs.jurieo.com/gemini/official"
       }
     ]
   },
