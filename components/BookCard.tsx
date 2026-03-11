@@ -27,7 +27,7 @@ export default function BookCard({ book }: { book: Book }) {
         </div>
       </div>
 
-      {/* CTA 购买按钮 */}
+      {/* 购买按钮 */}
       <div className="mt-auto pt-2">
         <button 
           onClick={() => window.open(book.purchaseLink, '_blank')}
