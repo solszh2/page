@@ -1,9 +1,9 @@
 [
   {
     "id": "new-energy",
-    "name": "新能源",
+    "name": "新能源汽车类",
     "tagline": "探索前沿新能源汽车技术与发展趋势。",
-    "coverImage": "/images/ne-cover.jpg",
+    "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=新能源汽车",
     "books": [
       {
         "id": "ne-1",
@@ -17,17 +17,48 @@
     ]
   },
   {
-    "id": "traditional-vehicles",
-    "name": "传统车辆",
-    "tagline": "经典内燃机汽车底盘、发动机与传动系统解析。",
-    "coverImage": "/images/tv-cover.jpg",
-    "books": []
+    "id": "car-culture",
+    "name": "汽车文化类",
+    "tagline": "了解汽车百年发展史与深厚文化底蕴。",
+    "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车文化",
+    "books": [
+      {
+        "id": "cul-1",
+        "name": "世界汽车简史",
+        "author": "李四 编著",
+        "price": "45.00",
+        "tagline": "一百年汽车工业的激荡风云录与品牌故事。",
+        "coverImage": "https://via.placeholder.com/150x200",
+        "purchaseLink": "https://gs.jurieo.com/gemini/official"
+      }
+    ]
   },
-  {
-    "id": "battery",
-    "name": "蓄电池",
-    "tagline": "汽车铅酸蓄电池与新型储能设备的维护与诊断。",
-    "coverImage": "/images/battery-cover.jpg",
-    "books": []
-  }
+  { "id": "mech-basics", "name": "汽车机械基础", "tagline": "汽车机械原理与基础知识。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车机械基础", "books": [] },
+  { "id": "elec-electronics", "name": "汽车电工电子类", "tagline": "汽车电子与电工基础技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车电工电子", "books": [] },
+  { "id": "structure-maintenance", "name": "汽车构造与维护类", "tagline": "整车构造解析与常规维护保养。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=构造与维护", "books": [] },
+  { "id": "mech-drawing", "name": "汽车机械识图类", "tagline": "汽车机械图纸的识别与绘制基础。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=机械识图", "books": [] },
+  { "id": "mechanism-disassembly", "name": "汽车机械机构与拆装类", "tagline": "汽车核心机构解析与实操拆装指导。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=机构与拆装", "books": [] },
+  { "id": "electrical", "name": "汽车电气类", "tagline": "全车电气系统原理与故障排查。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车电气", "books": [] },
+  { "id": "engine", "name": "汽车发动机类", "tagline": "汽车心脏：发动机的构造与维修。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车发动机", "books": [] },
+  { "id": "chassis", "name": "汽车底盘类", "tagline": "汽车底盘构造、检测与维修技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车底盘", "books": [] },
+  { "id": "maintenance", "name": "汽车维护类", "tagline": "车辆定期维护与保养实务。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车维护", "books": [] },
+  { "id": "repair", "name": "汽车维修类", "tagline": "全面汽车综合维修技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车维修", "books": [] },
+  { "id": "performance-testing", "name": "汽车性能检测与调试类", "tagline": "车辆各项性能数据的检测与分析调试。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=性能检测与调试", "books": [] },
+  { "id": "prof-english", "name": "汽车专业英语类", "tagline": "汽车行业专业词汇与文献阅读。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=专业英语", "books": [] },
+  { "id": "transmission-control", "name": "汽车传动及控制系统类", "tagline": "动力传输系统的核心结构与控制。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=传动及控制", "books": [] },
+  { "id": "steering-control", "name": "汽车行驶与转向及控制系统类", "tagline": "保障安全平稳的行驶与转向技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=行驶与转向", "books": [] },
+  { "id": "braking-control", "name": "汽车制动及控制系统类", "tagline": "安全制动系统的原理与检修。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=制动及控制", "books": [] },
+  { "id": "body-electrical", "name": "汽车车身电气设备类", "tagline": "车身附属电气设备的检修与加装。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=车身电气设备", "books": [] },
+  { "id": "sheet-metal", "name": "汽车钣金工艺类", "tagline": "车身结构受损分析与钣金修复技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=钣金工艺", "books": [] },
+  { "id": "body-repair", "name": "汽车车身修复类", "tagline": "车身尺寸测量与大修恢复技术。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=车身修复", "books": [] },
+  { "id": "painting", "name": "汽车涂装类", "tagline": "从底漆到面漆的专业喷涂与调色工艺。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车涂装", "books": [] },
+  { "id": "beauty-decoration", "name": "汽车美容与装潢类", "tagline": "漆面养护、内饰清洁与车辆个性化装潢。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=美容与装潢", "books": [] },
+  { "id": "usage-maintenance", "name": "汽车使用与维护类", "tagline": "驾驶人日常用车知识与基础维护。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=使用与维护", "books": [] },
+  { "id": "business-etiquette", "name": "汽车商务礼仪类", "tagline": "汽车服务接待与商务洽谈规范。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=商务礼仪", "books": [] },
+  { "id": "sales-practice", "name": "汽车销售实务类", "tagline": "汽车营销技巧与销售流程管理。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=销售实务", "books": [] },
+  { "id": "repair-service", "name": "汽车维修服务类", "tagline": "维修企业的客户关系与服务接待流程。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=维修服务", "books": [] },
+  { "id": "parts-management", "name": "汽车配件管理类", "tagline": "汽车配件的仓储、检索与供应链管理。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=配件管理", "books": [] },
+  { "id": "fault-diagnosis", "name": "汽车故障诊断类", "tagline": "高级疑难故障排查与解码器使用逻辑。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=故障诊断", "books": [] },
+  { "id": "materials", "name": "汽车材料类", "tagline": "汽车金属及非金属运行材料的基础认知。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车材料", "books": [] },
+  { "id": "tools-instruments", "name": "常用工量具类", "tagline": "汽车专业手动工具与精密量具的使用规范。", "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=常用工量具", "books": [] }
 ]
