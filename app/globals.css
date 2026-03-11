@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* 使用您之前选定的主题色作为前景色和强调色 */
   --foreground: #1c2d37;
 }
 
@@ -13,6 +12,33 @@
   --color-brand-lighter: #E0ECDE;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* === 注入克制的高级动效 === */
+  /* 1. 整体上浮淡入：800ms，平滑缓动曲线 */
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* 2. 背景光斑慢漂移：20s/25s 极慢速来回移动和轻微缩放 */
+  --animate-drift-slow: drift 20s ease-in-out infinite alternate;
+  --animate-drift-slower: drift 25s ease-in-out infinite alternate-reverse;
+  /* 3. 底部提示轻微浮动：3s 柔和上下 */
+  --animate-float-soft: float-soft 3s ease-in-out infinite;
+}
+
+/* === 动效关键帧 === */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(2%, 3%) scale(1.05); }
+  66% { transform: translate(-2%, 1%) scale(0.95); }
+  100% { transform: translate(1%, -2%) scale(1); }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); } /* 只有 6px 的移动，避免浮动过大 */
 }
 
 /* 核心：全局细腻渐变背景 */
@@ -20,13 +46,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  /* 柔和透亮的蓝绿色渐变 */
   background: linear-gradient(135deg, #f3f8fb 0%, #e0ecde 50%, #eef2f3 100%);
   background-attachment: fixed;
   position: relative;
 }
 
-/* 核心：全局轻微噪点纹理 (通过伪元素叠加，不影响下层点击) */
+/* 核心：全局轻微噪点纹理 */
 body::before {
   content: "";
   position: fixed;
@@ -40,18 +65,14 @@ body::before {
 }
 
 /* === iOS 质感复用类 === */
-
-/* 模块卡片毛玻璃 */
 .glass-card {
   @apply bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.03)] transition-all duration-500 hover:bg-white/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1;
 }
 
-/* 导航栏毛玻璃 */
 .glass-nav {
   @apply bg-white/40 backdrop-blur-2xl border-b border-white/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)];
 }
 
-/* 搜索框毛玻璃 */
 .glass-input {
   @apply bg-white/50 backdrop-blur-md border border-white/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] focus:bg-white/80 focus:ring-2 focus:ring-brand-main focus:border-transparent transition-all outline-none;
 }
