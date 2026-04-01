@@ -15,27 +15,25 @@ export default function CozeChat() {
       // @ts-ignore
       new CozeWebSDK.WebChatClient({
         config: {
-          // 你的智能体 ID
-          bot_id: '7615917818701381638', 
+          bot_id: '7615917818701381638',
         },
         componentProps: {
           title: '汽车书目助手',
         },
-        // 核心修复：按照官方示例配置鉴权
         auth: {
           type: 'token',
-          // 填入你提供的 PAT
           token: 'pat_5W1PNlZXm2HrMc3wMETizNvvgy2VyPmsfa4ZeXKnHp7evKE7t6BUzvg5Lhv0S9ML',
-          // 令牌刷新时使用同样的 Token
           onRefreshToken: () => 'pat_5W1PNlZXm2HrMc3wMETizNvvgy2VyPmsfa4ZeXKnHp7evKE7t6BUzvg5Lhv0S9ML',
         },
         ui: {
           base: {
-            icon: 'https://p16-va.lemone8.com/obj/tos-maliva-p-0000/6908331575804595205', 
-            layout: 'pc',
+            // 👇 核心修复：使用你提供的新图片链接作为 Logo
+            icon: 'https://i.postimg.cc/0N0pPbSt/image.png', 
+            // 建议：显式指定为 PC 布局，这能确保图标始终显示在浮动按钮上
+            layout: 'pc', 
           },
           asstBtn: {
-            fillColor: '#3B82F6', // 统一使用主题蓝色
+            fillColor: '#3B82F6', // 保持主题蓝色
           },
           footer: {
             isShow: true,
