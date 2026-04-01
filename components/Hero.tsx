@@ -10,9 +10,9 @@ export default function Hero() {
       {/* 核心文案区域：应用整体上浮淡入动画，并使其默认透明 */}
       <div className="opacity-0 animate-fade-in-up text-center max-w-3xl z-10 flex flex-col items-center mt-12">
         
-        {/* 优化排版：降低字重(semibold)，加宽字间距(tracking-[0.15em])，让字体呼吸感更强 */}
+        {/* 优化排版：修改为开动的小汽车并应用 animate-drive 动画 */}
         <h1 className="text-4xl md:text-5xl font-semibold tracking-[0.15em] text-[#1c2d37] mb-5 flex items-center justify-center gap-2 ml-2">
-          高教社汽车书目 <span className="text-3xl md:text-4xl origin-bottom-right animate-wave inline-block -ml-2">👋</span>
+          高教社汽车书目 <span className="text-3xl md:text-4xl animate-drive inline-block ml-2">🚗</span>
         </h1>
         <p className="text-base md:text-xl text-brand-dark/70 mb-10 font-medium tracking-[0.2em]">
           查书 · 看书 · 用书

@@ -3,16 +3,25 @@
     "id": "new-energy",
     "name": "新能源汽车类",
     "tagline": "探索前沿新能源汽车技术与发展趋势。",
-    "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=新能源汽车",
+    "coverImage": "https://i.postimg.cc/65tKDCT1/image.png",
     "books": [
       {
         "id": "ne-1",
-        "name": "新能源汽车结构与原理",
-        "author": "张三 编著",
-        "price": "59.00",
-        "tagline": "全面解析新能源汽车核心三电系统与最新架构。",
-        "coverImage": "https://via.placeholder.com/150x200",
-        "purchaseLink": "https://gs.jurieo.com/gemini/official"
+        "name": "新能源汽车文化",
+        "author": "作者 刘付金文 宋燕娜",
+        "price": "26.00",
+        "tagline": "本书内容包括什么是新能源汽车、纯电动汽车的发展、混合动力汽车的发展、燃料电池汽车的发展、中国新能源汽车主要品牌、国外新能源汽车主要品牌。",
+        "coverImage": "https://i.postimg.cc/65tKDCT1/image.png",
+        "purchaseLink": "https://xuanshu.hep.com.cn/front/book/previewBookResource?bookId=654133d374ce561611bd97ad"
+      },
+      {
+        "id": "ne-2",
+        "name": "新能源汽车机械基础",
+        "author": "作者 逄兰芹 张振东",
+        "price": "43.10",
+        "tagline": "本书内容包括机械识图常识、汽车材料的应用、新能源汽车常见机构的应用、新能源汽车典型零件的应用、新能源汽车机械传动应用、新能源汽车液压控制系统的应用、新能源汽车制造工艺等。",
+        "coverImage": "https://i.postimg.cc/VNLBTZcd/image.png",
+        "purchaseLink": "https://xuanshu.hep.com.cn/front/book/previewBookResource?bookId=63f64b37938b7cc2960ef9e3"
       }
     ]
   },
@@ -20,16 +29,16 @@
     "id": "car-culture",
     "name": "汽车文化类",
     "tagline": "了解汽车百年发展史与深厚文化底蕴。",
-    "coverImage": "https://via.placeholder.com/400x300/f3f4f6/111827?text=汽车文化",
+    "coverImage": "https://i.postimg.cc/rwqS0Zsf/image.png",
     "books": [
       {
         "id": "cul-1",
-        "name": "世界汽车简史",
-        "author": "李四 编著",
-        "price": "45.00",
-        "tagline": "一百年汽车工业的激荡风云录与品牌故事。",
-        "coverImage": "https://via.placeholder.com/150x200",
-        "purchaseLink": "https://gs.jurieo.com/gemini/official"
+        "name": "汽车文化",
+        "author": "作者 王明辉",
+        "price": "66.00",
+        "tagline": "本书主要内容包括汽车发展史､汽车概述､汽车公司与品牌故事､汽车娱乐､汽车节能与环保。",
+        "coverImage": "本书主要内容包括汽车发展史､汽车概述､汽车公司与品牌故事､汽车娱乐､汽车节能与环保",
+        "purchaseLink": "https://xuanshu.hep.com.cn/front/book/previewBookResource?bookId=61df0d0c938b7cc2960ee233"
       }
     ]
   },

@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       <footer className="py-12 text-center text-brand-dark/40 text-xs font-medium uppercase tracking-wider">
-        © {new Date().getFullYear()} 高教社汽车 · 保持克制
+        © {new Date().getFullYear()} 中职二部 · 交通建筑分社
       </footer>
     </main>
   );

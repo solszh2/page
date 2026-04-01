@@ -6,21 +6,21 @@
 
 @theme inline {
   --color-foreground: var(--foreground);
-  --color-brand-dark: #2C6975;
-  --color-brand-main: #68B2A0;
-  --color-brand-light: #CDE0C9;
-  --color-brand-lighter: #E0ECDE;
+  /* 将原本的绿色系全面替换为蓝色系 */
+  --color-brand-dark: #1E3A8A;   /* 深蓝色 */
+  --color-brand-main: #3B82F6;   /* 主蓝色 */
+  --color-brand-light: #BFDBFE;  /* 浅蓝色 */
+  --color-brand-lighter: #DBEAFE; /* 更浅的蓝色 */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
   /* === 注入克制的高级动效 === */
-  /* 1. 整体上浮淡入：800ms，平滑缓动曲线 */
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  /* 2. 背景光斑慢漂移：20s/25s 极慢速来回移动和轻微缩放 */
   --animate-drift-slow: drift 20s ease-in-out infinite alternate;
   --animate-drift-slower: drift 25s ease-in-out infinite alternate-reverse;
-  /* 3. 底部提示轻微浮动：3s 柔和上下 */
   --animate-float-soft: float-soft 3s ease-in-out infinite;
+  /* 新增：小汽车行驶动画 */
+  --animate-drive: drive 2s ease-in-out infinite;
 }
 
 /* === 动效关键帧 === */
@@ -38,7 +38,14 @@
 
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); } /* 只有 6px 的移动，避免浮动过大 */
+  50% { transform: translateY(6px); } 
+}
+
+/* 新增：小汽车行驶关键帧 */
+@keyframes drive {
+  0% { transform: translateX(-5px) translateY(0); }
+  50% { transform: translateX(5px) translateY(-2px); }
+  100% { transform: translateX(-5px) translateY(0); }
 }
 
 /* 核心：全局细腻渐变背景 */
@@ -46,7 +53,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f3f8fb 0%, #e0ecde 50%, #eef2f3 100%);
+  /* 将渐变中间的绿色 #e0ecde 换成淡蓝色 #dbeafe */
+  background: linear-gradient(135deg, #f3f8fb 0%, #dbeafe 50%, #eef2f3 100%);
   background-attachment: fixed;
   position: relative;
 }
