@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import CozeChat from "@/components/CozeChat"; // 引入刚才创建的组件
+// 确保引入了组件
+import CozeChat from "@/components/CozeChat"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "高教社汽车书目",
+  title: "高教社汽车书目", // 顺便帮你把网页标题优化了一下
   description: "查书 · 看书 · 用书",
 };
 
@@ -24,12 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        {/* 智能体悬浮窗 */}
+        {/* 放在这里：脱离所有页面流，绝对不会挤压你的 Explore 图标 */}
         <CozeChat />
       </body>
     </html>
