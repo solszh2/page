@@ -7,9 +7,10 @@
 @theme inline {
   --color-foreground: var(--foreground);
   --color-brand-dark: #000000;
-  --color-brand-main: #1A5CFF;
-  --color-brand-light: #e3f2fd;
-  --color-brand-lighter: #f0f7ff;
+  /* 将主品牌色改为偏灰的蓝色 */
+  --color-brand-main: #6c94c6; 
+  --color-brand-light: #e1ebf4;
+  --color-brand-lighter: #f0f5f9;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -40,9 +41,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  /* 更深邃、更通透的科技蓝渐变，水滴式渲染到底部 */
-  /* 从顶部的深邃湛蓝 #093EDC，经过亮蓝 #3071FF 过渡，自然消散到极浅灰白 */
-  background: linear-gradient(180deg, #093EDC 0%, #3071FF 35%, #9BBDF8 65%, #F4F8FB 90%, #F4F8FB 100%);
+  /* 👉 核心修改：匹配图片的高级灰蓝渐变 (120度斜向渐变) */
+  /* 左上角偏深灰蓝(#6c94c6) -> 中间过渡(#8caed5) -> 右下角极浅灰蓝(#f0f5f9) */
+  background: linear-gradient(120deg, #6c94c6 0%, #8caed5 40%, #d8e5f2 75%, #f0f5f9 100%);
   background-attachment: fixed;
   position: relative;
 }
@@ -54,14 +55,15 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* 保留极其微弱的噪点，增加科技质感 */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  /* 保留噪点，降低一点点透明度让灰蓝色更干净 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.012'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
 }
 
 .glass-card {
-  @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(9,62,220,0.05)] transition-all duration-500 hover:bg-white/95 hover:shadow-[0_12px_40px_rgba(9,62,220,0.1)] hover:-translate-y-1;
+  /* 修改卡片的阴影颜色，去掉原来的高饱和深蓝色阴影，换成现在的灰蓝色阴影 */
+  @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(108,148,198,0.1)] transition-all duration-500 hover:bg-white/95 hover:shadow-[0_12px_40px_rgba(108,148,198,0.2)] hover:-translate-y-1;
 }
 
 .glass-nav {
