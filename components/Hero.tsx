@@ -11,13 +11,13 @@ export default function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
             高教社汽车书目
           </h1>
-          <span className="absolute top-1/2 -translate-y-1/2 -right-16 md:-right-20 text-4xl md:text-5xl animate-drive drop-shadow-lg pointer-events-none select-none">
+          <span className="absolute top-1/2 -translate-y-1/2 -right-16 md:-right-20 text-4xl md:text-5xl animate-drive drop-shadow-lg pointer-events-none">
             🚗
           </span>
         </div>
         
-        {/* 副标题：使用 indent 首行缩进完美抵消字间距，彻底解决点击跳动问题 */}
-        <p className="text-lg md:text-2xl text-white/90 mb-12 font-medium tracking-[0.25em] indent-[0.25em] drop-shadow-sm uppercase select-none">
+        {/* 副标题：加 pl-[0.25em] 完美抵消 tracking 带来的右侧空隙 */}
+        <p className="text-lg md:text-2xl text-white/90 mb-12 font-medium tracking-[0.25em] pl-[0.25em] drop-shadow-sm uppercase">
           查书 · 看书 · 用书
         </p>
 
@@ -33,19 +33,19 @@ export default function Hero() {
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span className="inline-block text-base md:text-lg tracking-widest indent-[0.1em] select-none">
-            点击获取汽车电子专业目录
-          </span>
+          <span className="text-base md:text-lg tracking-widest pl-[0.1em]">点击获取汽车电子专业目录</span>
         </a>
       </div>
 
       {/* 底部探索提示 */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 animate-fade-in-up">
-        {/* 核心修复：把 -mr 改为了 indent，并加了 select-none 禁止选中 */}
-        <span className="inline-block text-[11px] tracking-[0.4em] indent-[0.4em] uppercase font-bold text-white whitespace-nowrap select-none">
-          Explore More
-        </span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+      {/* 👇 核心修复：用 w-full 撑满加 flex justify-center 来居中，避免 translate 被动画覆盖！ */}
+      <div className="absolute bottom-10 left-0 w-full flex justify-center pointer-events-none">
+        <div className="opacity-0 animate-fade-in-up flex flex-col items-center gap-3">
+          <span className="text-[11px] tracking-[0.4em] pl-[0.4em] uppercase font-bold text-white whitespace-nowrap">
+            Explore More
+          </span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+        </div>
       </div>
     </section>
   );
