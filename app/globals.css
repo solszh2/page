@@ -41,9 +41,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  /* 👉 核心修改：匹配图片的高级灰蓝渐变 (120度斜向渐变) */
-  /* 左上角偏深灰蓝(#6c94c6) -> 中间过渡(#8caed5) -> 右下角极浅灰蓝(#f0f5f9) */
-  background: linear-gradient(120deg, #6c94c6 0%, #8caed5 40%, #d8e5f2 75%, #f0f5f9 100%);
+  /* 👇 将 120deg 改为了 180deg，实现从上到下的垂直渐变 */
+  background: linear-gradient(180deg, #6c94c6 0%, #8caed5 35%, #d8e5f2 70%, #f0f5f9 100%);
   background-attachment: fixed;
   position: relative;
 }
