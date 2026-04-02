@@ -50,12 +50,10 @@
 
 /* 核心：全局基础背景 */
 body {
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  /* 关键修改：删除之前的渐变，将 body 的全局背景设为纯白 #ffffff */
-  background: #ffffff;
-  position: relative;
+  /* ...其他属性保持不变... */
+  /* 参考图片：上半部分是渐变蓝，向下平滑过渡到浅白色背景 */
+  background: linear-gradient(180deg, #0047FF 0%, #1A5CFF 20%, #4AA9FF 45%, #F4F7FF 70%, #FFFFFF 100%);
+  background-attachment: fixed; 
 }
 
 /* 核心：全局细腻浅蓝渐变背景，告别单调的死白 */
