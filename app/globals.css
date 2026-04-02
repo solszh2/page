@@ -1,82 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #1c2d37;
+  --foreground: #1A1A1A; 
 }
 
 @theme inline {
   --color-foreground: var(--foreground);
-  /* 关键修改：将全局 brand-dark 定义为参考图中的深蓝色 #1c3f61 */
-  --color-brand-dark: #1c3f61;   
-  --color-brand-main: #3B82F6;   /* 保持主蓝色，用于焦点效果等 */
-  --color-brand-light: #BFDBFE;  /* 保持浅蓝色 */
-  --color-brand-lighter: #DBEAFE; /* 保持更浅的蓝色 */
+  --color-brand-dark: #000000;
+  --color-brand-main: #1A5CFF;
+  --color-brand-light: #e3f2fd;
+  --color-brand-lighter: #f0f7ff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* === 注入克制的高级动效 === */
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-drift-slow: drift 20s ease-in-out infinite alternate;
   --animate-drift-slower: drift 25s ease-in-out infinite alternate-reverse;
   --animate-float-soft: float-soft 3s ease-in-out infinite;
-  /* 新增：小汽车行驶动画 */
-  --animate-drive: drive 2s ease-in-out infinite;
+  --animate-drive: drive 2.5s ease-in-out infinite;
 }
 
-/* === 动效关键帧 === */
 @keyframes fade-in-up {
   0% { opacity: 0; transform: translateY(24px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes drift {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(2%, 3%) scale(1.05); }
-  66% { transform: translate(-2%, 1%) scale(0.95); }
-  100% { transform: translate(1%, -2%) scale(1); }
-}
-
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  50% { transform: translateY(6px); } 
 }
 
-/* 新增：小汽车行驶关键帧 */
 @keyframes drive {
-  0% { transform: translateX(-5px) translateY(0); }
-  50% { transform: translateX(5px) translateY(-2px); }
-  100% { transform: translateX(-5px) translateY(0); }
+  0% { transform: translateX(-5px); }
+  50% { transform: translateX(8px); }
+  100% { transform: translateX(-5px); }
 }
 
-/* 核心：全局基础背景 */
-body {
-  /* ...其他属性保持不变... */
-  /* 参考图片：上半部分是渐变蓝，向下平滑过渡到浅白色背景 */
-  background: linear-gradient(180deg, #0047FF 0%, #1A5CFF 20%, #4AA9FF 45%, #F4F7FF 70%, #FFFFFF 100%);
-  background-attachment: fixed; 
-}
-
-/* 核心：全局细腻浅蓝渐变背景，告别单调的死白 */
 body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  /* 从极浅蓝平滑过渡到稍微带点蓝灰的色调，与顶部的深蓝渐变完美衔接 */
-  background: linear-gradient(135deg, #f0f6fa 0%, #e4eff7 50%, #dbe8f3 100%);
+  /* 更深邃、更通透的科技蓝渐变，水滴式渲染到底部 */
+  /* 从顶部的深邃湛蓝 #093EDC，经过亮蓝 #3071FF 过渡，自然消散到极浅灰白 */
+  background: linear-gradient(180deg, #093EDC 0%, #3071FF 35%, #9BBDF8 65%, #F4F8FB 90%, #F4F8FB 100%);
   background-attachment: fixed;
   position: relative;
 }
 
-/* === iOS 质感复用类 === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 保留极其微弱的噪点，增加科技质感 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
 .glass-card {
-  @apply bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.03)] transition-all duration-500 hover:bg-white/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1;
+  @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(9,62,220,0.05)] transition-all duration-500 hover:bg-white/95 hover:shadow-[0_12px_40px_rgba(9,62,220,0.1)] hover:-translate-y-1;
 }
 
 .glass-nav {
-  @apply bg-white/40 backdrop-blur-2xl border-b border-white/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)];
-}
-
-/* 优化后的搜索框全局样式，适配白底 */
-.glass-input {
-  @apply bg-white/50 backdrop-blur-md border border-white/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] focus:bg-white/80 focus:ring-2 focus:ring-brand-dark focus:border-transparent transition-all outline-none;
+  @apply bg-white/40 backdrop-blur-2xl border-b border-white/20;
 }
