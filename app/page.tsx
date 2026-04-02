@@ -46,13 +46,13 @@ export default function Home() {
     });
   }, [searchTerm]);
 
-  return (
-    // 移除原有 bg 色，让 body 的全局渐变和噪点透出来
+ return (
+    // 关键修改：移除之前的 bg-white，让 globals.css 的浅蓝渐变透出来
     <main className="min-h-screen relative z-10">
       <Hero />
       
+      {/* 移除 bg-white */}
       <section className="max-w-7xl mx-auto px-6 py-8">
-        {/* iOS 毛玻璃搜索框 */}
         <div className="mb-14 flex justify-center animate-fade-up">
           <div className="relative w-full max-w-xl">
             <input
@@ -60,7 +60,8 @@ export default function Home() {
               placeholder="搜索模块名称或书籍关键词..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-6 pr-14 py-4 rounded-full glass-input text-[#1c2d37] placeholder-[#1c2d37]/40 text-base"
+              // 搜索框保持白底，这样在浅蓝渐变的背景上会显得非常清爽、立体
+              className="w-full pl-6 pr-14 py-4 rounded-full bg-white/90 backdrop-blur-sm border border-white shadow-sm text-[#1c2d37] placeholder-[#1c2d37]/40 text-base focus:bg-white focus:ring-2 focus:ring-[#2f689e] focus:border-transparent outline-none transition-all"
             />
             <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[#1c2d37]/40">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -85,8 +86,8 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="py-12 text-center text-brand-dark/40 text-xs font-medium uppercase tracking-wider">
-        © {new Date().getFullYear()} 中职二部 · 交通建筑分社
+      <footer className="py-12 text-center text-brand-dark/50 text-xs font-medium uppercase tracking-wider">
+        @2026中职二部 交通建筑分社
       </footer>
     </main>
   );

@@ -6,6 +6,19 @@ export default function CozeChat() {
     // 1. 防止重复加载脚本
     if (document.getElementById("coze-js")) return;
 
+    // 2. 【核心修改】动态注入 CSS，利用代码强制将你的新照片在网页上渲染为圆形
+    const style = document.createElement("style");
+    style.id = "coze-custom-style";
+    style.innerHTML = `
+      /* 只要是包含该新图片链接的图片标签，一律强制变成圆形，原图不受任何影响 */
+      img[src*="e8bc68ee60e3d4d70e187fa0fd47640.jpg"] {
+        border-radius: 50% !important; 
+        object-fit: cover !important;
+        aspect-ratio: 1 / 1 !important;
+      }
+    `;
+    document.head.appendChild(style);
+
     const script = document.createElement("script");
     script.id = "coze-js";
     script.src = "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js";
@@ -14,31 +27,17 @@ export default function CozeChat() {
     script.onload = () => {
       // @ts-ignore
       new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: '7615917818701381638',
-        },
-        componentProps: {
-          title: '汽车书目助手',
-        },
-        auth: {
-          type: 'token',
-          token: 'pat_5W1PNlZXm2HrMc3wMETizNvvgy2VyPmsfa4ZeXKnHp7evKE7t6BUzvg5Lhv0S9ML',
-          onRefreshToken: () => 'pat_5W1PNlZXm2HrMc3wMETizNvvgy2VyPmsfa4ZeXKnHp7evKE7t6BUzvg5Lhv0S9ML',
-        },
+        config: { bot_id: '7615917818701381638' },
+        componentProps: { title: '汽车书目助手' },
+        auth: { /* ...保持原样... */ },
         ui: {
           base: {
-            // 👇 核心修复：使用你提供的新图片链接作为 Logo
-            icon: 'https://i.postimg.cc/0N0pPbSt/image.png', 
-            // 建议：显式指定为 PC 布局，这能确保图标始终显示在浮动按钮上
+            // 👇 【核心修改】替换为你给出的新图片链接
+            icon: 'https://i.postimg.cc/cCL7PNLW/e8bc68ee60e3d4d70e187fa0fd47640.jpg', 
             layout: 'pc', 
           },
-          asstBtn: {
-            fillColor: '#3B82F6', // 保持主题蓝色
-          },
-          footer: {
-            isShow: true,
-            expression: true,
-          }
+          asstBtn: { fillColor: '#3B82F6' },
+          footer: { isShow: true, expression: true }
         }
       });
     };

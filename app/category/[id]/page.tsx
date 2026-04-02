@@ -62,13 +62,23 @@ export default async function CategoryPage({ params }: { params: Promise<{ id: s
 
       <section className="max-w-7xl mx-auto px-6">
         {category.books && category.books.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
-            {category.books.map((book) => (
-              <BookCard key={book.id} book={book} />
-            ))}
-          </div>
+          <>
+            {/* 书籍列表 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
+              {category.books.map((book) => (
+                <BookCard key={book.id} book={book} />
+              ))}
+            </div>
+            
+            {/* 新增：在已添加的书籍之后，显示更多书籍还在整理中的提示 */}
+            <div className="mt-20 mb-10 flex flex-col items-center justify-center text-brand-dark/40">
+              <div className="w-12 h-[2px] bg-brand-dark/10 mb-4 rounded-full"></div>
+              <p className="text-sm font-medium tracking-wide">更多书录还在整理中，敬请期待...</p>
+            </div>
+          </>
         ) : (
           <div className="py-32 flex flex-col items-center justify-center text-brand-dark/40">
+            {/* 原本针对完全没有书的分类的大提示，已移入 div 内部防止语法报错 */}
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mb-4 opacity-50">
               <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
             </svg>
